@@ -7,6 +7,8 @@
             <!-- get div-node containing the name field -->
             <xpath expr="//input[@name='name']/.." position="replace">
                 <!-- replace it with firstname, lastname and nickname -->
+                <!-- <input type="hidden" name="name" class="form-control" t-att-value="checkout.get('firstname') + checkout.get('lastname')"/> -->
+                <input type="hidden" name="name" class="form-control" t-att-value="checkout.get('name')"/>
                 <div t-attf-class="form-group #{error.get('firstname') and 'has-error' or ''} col-lg-6">
                     <label class="control-label" for="contact_firstname">First Name</label>
                     <input type="text" name="firstname" class="form-control" t-att-value="checkout.get('firstname')"/>
@@ -16,10 +18,24 @@
                     <input type="text" name="lastname" class="form-control" t-att-value="checkout.get('lastname')"/>
                 </div>
                 <div t-attf-class="form-group #{error.get('nickname') and 'has-error' or ''} col-lg-6">
-                    <label class="control-label" for="contact_nickname">Nick Name</label>
+                    <label class="control-label" for="contact_nickname" style="font-weight: normal">Nick Name</label>
                     <input type="text" name="nickname" class="form-control" t-att-value="checkout.get('nickname')"/>
                 </div>
             </xpath>
+
+            <xpath expr="//input[@name='shipping_name']/.." position="replace">
+                <input type="hidden" name="shipping_name" class="form-control" t-att-value="checkout.get('shipping_name', '')" t-att-readonly="'readonly' if shipping_id &gt;= 0 else ''"/>
+                <div t-attf-class="form-group #{error.get('shipping_firstname') and 'has-error' or ''} col-lg-6">
+                      <label class="control-label" for="shipping_firstname">First Name (Shipping)</label>
+                      <input type="text" name="shipping_firstname" class="form-control" t-att-value="checkout.get('shipping_firstname', '')" t-att-readonly="'readonly' if shipping_id &gt;= 0 else ''"/>
+                </div>
+                <div t-attf-class="form-group #{error.get('shipping_lastname') and 'has-error' or ''} col-lg-6">
+                      <label class="control-label" for="shipping_lastname">Last Name (Shipping)</label>
+                      <input type="text" name="shipping_lastname" class="form-control" t-att-value="checkout.get('shipping_lastname', '')" t-att-readonly="'readonly' if shipping_id &gt;= 0 else ''"/>
+                </div>
+            </xpath>
+
+
         </template>
     </data>
 </openerp>
