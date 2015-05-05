@@ -16,10 +16,10 @@
                     <label class="control-label" for="contact_lastname">Last Name</label>
                     <input type="text" name="lastname" class="form-control" t-att-value="checkout.get('lastname')"/>
                 </div>
-                <div t-attf-class="form-group #{error.get('nickname') and 'has-error' or ''} col-lg-6">
+                <!--<div t-attf-class="form-group #{error.get('nickname') and 'has-error' or ''} col-lg-6">
                     <label class="control-label" for="contact_nickname" style="font-weight: normal">Nick Name</label>
                     <input type="text" name="nickname" class="form-control" t-att-value="checkout.get('nickname')"/>
-                </div>
+                </div>-->
             </xpath>
 
             <xpath expr="//input[@name='shipping_name']/.." position="replace">

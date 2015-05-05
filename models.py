@@ -11,4 +11,3 @@ class NamePartner(models.Model):
     # add fields to res.partner
     firstname = fields.Char(string='First Name')
     lastname = fields.Char(string='Last Name')
-    nickname = fields.Char(string='Nick Name')
