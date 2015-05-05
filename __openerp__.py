@@ -6,8 +6,8 @@
         Add firstname, lastname and nickname field to partners.""",
 
     'description': """
-        The modul replaces the name field of partners in views by firstname, lastname and nickname.
-        Those fields are also added to the model. They are also added to the shop checkout form.
+        The module adds fields for first and last name to the res.partner model and related views.
+        They are also added to the shop checkout form.
     """,
 
     'author': "Tobias Wetzel",
